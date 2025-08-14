@@ -1,0 +1,68 @@
+[
+{
+  "directory": "/home/wsh/cuda-practice/build/1_cuda_reduce_study",
+  "command": "/usr/local/cuda-12.2/bin/nvcc -forward-unknown-to-host-compiler  --options-file CMakeFiles/hello_reduce.dir/includes_CUDA.rsp -g -std=c++17 \"--generate-code=arch=compute_52,code=[compute_52,sm_52]\" -G -x cu -c /home/wsh/cuda-practice/1_cuda_reduce_study/hello_reduce.cu -o CMakeFiles/hello_reduce.dir/hello_reduce.cu.o",
+  "file": "/home/wsh/cuda-practice/1_cuda_reduce_study/hello_reduce.cu",
+  "output": "1_cuda_reduce_study/CMakeFiles/hello_reduce.dir/hello_reduce.cu.o"
+},
+{
+  "directory": "/home/wsh/cuda-practice/build/1_cuda_reduce_study",
+  "command": "/usr/local/cuda-12.2/bin/nvcc -forward-unknown-to-host-compiler  --options-file CMakeFiles/my_reduce_v0_global_memory.dir/includes_CUDA.rsp -g -std=c++17 \"--generate-code=arch=compute_52,code=[compute_52,sm_52]\" -G -x cu -c /home/wsh/cuda-practice/1_cuda_reduce_study/my_reduce_v0_global_memory.cu -o CMakeFiles/my_reduce_v0_global_memory.dir/my_reduce_v0_global_memory.cu.o",
+  "file": "/home/wsh/cuda-practice/1_cuda_reduce_study/my_reduce_v0_global_memory.cu",
+  "output": "1_cuda_reduce_study/CMakeFiles/my_reduce_v0_global_memory.dir/my_reduce_v0_global_memory.cu.o"
+},
+{
+  "directory": "/home/wsh/cuda-practice/build/1_cuda_reduce_study",
+  "command": "/usr/local/cuda-12.2/bin/nvcc -forward-unknown-to-host-compiler  --options-file CMakeFiles/my_reduce_v1_shared_memory.dir/includes_CUDA.rsp -g -std=c++17 \"--generate-code=arch=compute_52,code=[compute_52,sm_52]\" -G -x cu -c /home/wsh/cuda-practice/1_cuda_reduce_study/my_reduce_v1_shared_memory.cu -o CMakeFiles/my_reduce_v1_shared_memory.dir/my_reduce_v1_shared_memory.cu.o",
+  "file": "/home/wsh/cuda-practice/1_cuda_reduce_study/my_reduce_v1_shared_memory.cu",
+  "output": "1_cuda_reduce_study/CMakeFiles/my_reduce_v1_shared_memory.dir/my_reduce_v1_shared_memory.cu.o"
+},
+{
+  "directory": "/home/wsh/cuda-practice/build/1_cuda_reduce_study",
+  "command": "/usr/local/cuda-12.2/bin/nvcc -forward-unknown-to-host-compiler  --options-file CMakeFiles/my_reduce_v2_no_divergence_brance.dir/includes_CUDA.rsp -g -std=c++17 \"--generate-code=arch=compute_52,code=[compute_52,sm_52]\" -G -x cu -c /home/wsh/cuda-practice/1_cuda_reduce_study/my_reduce_v2_no_divergence_brance.cu -o CMakeFiles/my_reduce_v2_no_divergence_brance.dir/my_reduce_v2_no_divergence_brance.cu.o",
+  "file": "/home/wsh/cuda-practice/1_cuda_reduce_study/my_reduce_v2_no_divergence_brance.cu",
+  "output": "1_cuda_reduce_study/CMakeFiles/my_reduce_v2_no_divergence_brance.dir/my_reduce_v2_no_divergence_brance.cu.o"
+},
+{
+  "directory": "/home/wsh/cuda-practice/build/1_cuda_reduce_study",
+  "command": "/usr/local/cuda-12.2/bin/nvcc -forward-unknown-to-host-compiler  --options-file CMakeFiles/my_reduce_v3_no_bank_conflict.dir/includes_CUDA.rsp -g -std=c++17 \"--generate-code=arch=compute_52,code=[compute_52,sm_52]\" -G -x cu -c /home/wsh/cuda-practice/1_cuda_reduce_study/my_reduce_v3_no_bank_conflict.cu -o CMakeFiles/my_reduce_v3_no_bank_conflict.dir/my_reduce_v3_no_bank_conflict.cu.o",
+  "file": "/home/wsh/cuda-practice/1_cuda_reduce_study/my_reduce_v3_no_bank_conflict.cu",
+  "output": "1_cuda_reduce_study/CMakeFiles/my_reduce_v3_no_bank_conflict.dir/my_reduce_v3_no_bank_conflict.cu.o"
+},
+{
+  "directory": "/home/wsh/cuda-practice/build/1_cuda_reduce_study",
+  "command": "/usr/local/cuda-12.2/bin/nvcc -forward-unknown-to-host-compiler  --options-file CMakeFiles/my_reduce_v4_add_during_load_planA.dir/includes_CUDA.rsp -g -std=c++17 \"--generate-code=arch=compute_52,code=[compute_52,sm_52]\" -G -x cu -c /home/wsh/cuda-practice/1_cuda_reduce_study/my_reduce_v4_add_during_load_planA.cu -o CMakeFiles/my_reduce_v4_add_during_load_planA.dir/my_reduce_v4_add_during_load_planA.cu.o",
+  "file": "/home/wsh/cuda-practice/1_cuda_reduce_study/my_reduce_v4_add_during_load_planA.cu",
+  "output": "1_cuda_reduce_study/CMakeFiles/my_reduce_v4_add_during_load_planA.dir/my_reduce_v4_add_during_load_planA.cu.o"
+},
+{
+  "directory": "/home/wsh/cuda-practice/build/1_cuda_reduce_study",
+  "command": "/usr/local/cuda-12.2/bin/nvcc -forward-unknown-to-host-compiler  --options-file CMakeFiles/my_reduce_v4_add_during_load_planB.dir/includes_CUDA.rsp -g -std=c++17 \"--generate-code=arch=compute_52,code=[compute_52,sm_52]\" -G -x cu -c /home/wsh/cuda-practice/1_cuda_reduce_study/my_reduce_v4_add_during_load_planB.cu -o CMakeFiles/my_reduce_v4_add_during_load_planB.dir/my_reduce_v4_add_during_load_planB.cu.o",
+  "file": "/home/wsh/cuda-practice/1_cuda_reduce_study/my_reduce_v4_add_during_load_planB.cu",
+  "output": "1_cuda_reduce_study/CMakeFiles/my_reduce_v4_add_during_load_planB.dir/my_reduce_v4_add_during_load_planB.cu.o"
+},
+{
+  "directory": "/home/wsh/cuda-practice/build/1_cuda_reduce_study",
+  "command": "/usr/local/cuda-12.2/bin/nvcc -forward-unknown-to-host-compiler  --options-file CMakeFiles/my_reduce_v5_unroll_last_warp.dir/includes_CUDA.rsp -g -std=c++17 \"--generate-code=arch=compute_52,code=[compute_52,sm_52]\" -G -x cu -c /home/wsh/cuda-practice/1_cuda_reduce_study/my_reduce_v5_unroll_last_warp.cu -o CMakeFiles/my_reduce_v5_unroll_last_warp.dir/my_reduce_v5_unroll_last_warp.cu.o",
+  "file": "/home/wsh/cuda-practice/1_cuda_reduce_study/my_reduce_v5_unroll_last_warp.cu",
+  "output": "1_cuda_reduce_study/CMakeFiles/my_reduce_v5_unroll_last_warp.dir/my_reduce_v5_unroll_last_warp.cu.o"
+},
+{
+  "directory": "/home/wsh/cuda-practice/build/1_cuda_reduce_study",
+  "command": "/usr/local/cuda-12.2/bin/nvcc -forward-unknown-to-host-compiler  --options-file CMakeFiles/my_reduce_v6_completely_unroll.dir/includes_CUDA.rsp -g -std=c++17 \"--generate-code=arch=compute_52,code=[compute_52,sm_52]\" -G -x cu -c /home/wsh/cuda-practice/1_cuda_reduce_study/my_reduce_v6_completely_unroll.cu -o CMakeFiles/my_reduce_v6_completely_unroll.dir/my_reduce_v6_completely_unroll.cu.o",
+  "file": "/home/wsh/cuda-practice/1_cuda_reduce_study/my_reduce_v6_completely_unroll.cu",
+  "output": "1_cuda_reduce_study/CMakeFiles/my_reduce_v6_completely_unroll.dir/my_reduce_v6_completely_unroll.cu.o"
+},
+{
+  "directory": "/home/wsh/cuda-practice/build/1_cuda_reduce_study",
+  "command": "/usr/local/cuda-12.2/bin/nvcc -forward-unknown-to-host-compiler  --options-file CMakeFiles/my_reduce_v7_multi_add.dir/includes_CUDA.rsp -g -std=c++17 \"--generate-code=arch=compute_52,code=[compute_52,sm_52]\" -G -x cu -c /home/wsh/cuda-practice/1_cuda_reduce_study/my_reduce_v7_multi_add.cu -o CMakeFiles/my_reduce_v7_multi_add.dir/my_reduce_v7_multi_add.cu.o",
+  "file": "/home/wsh/cuda-practice/1_cuda_reduce_study/my_reduce_v7_multi_add.cu",
+  "output": "1_cuda_reduce_study/CMakeFiles/my_reduce_v7_multi_add.dir/my_reduce_v7_multi_add.cu.o"
+},
+{
+  "directory": "/home/wsh/cuda-practice/build/1_cuda_reduce_study",
+  "command": "/usr/local/cuda-12.2/bin/nvcc -forward-unknown-to-host-compiler  --options-file CMakeFiles/my_reduce_v8_shuffle.dir/includes_CUDA.rsp -g -std=c++17 \"--generate-code=arch=compute_52,code=[compute_52,sm_52]\" -G -x cu -c /home/wsh/cuda-practice/1_cuda_reduce_study/my_reduce_v8_shuffle.cu -o CMakeFiles/my_reduce_v8_shuffle.dir/my_reduce_v8_shuffle.cu.o",
+  "file": "/home/wsh/cuda-practice/1_cuda_reduce_study/my_reduce_v8_shuffle.cu",
+  "output": "1_cuda_reduce_study/CMakeFiles/my_reduce_v8_shuffle.dir/my_reduce_v8_shuffle.cu.o"
+}
+]

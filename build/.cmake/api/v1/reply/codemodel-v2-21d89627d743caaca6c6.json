@@ -1,0 +1,166 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20.0"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "1_cuda_reduce_study",
+					"jsonFile" : "directory-1_cuda_reduce_study-Debug-01e6d9af593f83b5a8bb.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "1_cuda_reduce_study",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1
+					],
+					"name" : "cuda-practice",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 1,
+					"id" : "hello_reduce::@214aa2a4a787257b8b5d",
+					"jsonFile" : "target-hello_reduce-Debug-2fb97eafe56eb60c8bb8.json",
+					"name" : "hello_reduce",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "my_reduce_v0_global_memory::@214aa2a4a787257b8b5d",
+					"jsonFile" : "target-my_reduce_v0_global_memory-Debug-2930791d45d03516fdcb.json",
+					"name" : "my_reduce_v0_global_memory",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "my_reduce_v1_shared_memory::@214aa2a4a787257b8b5d",
+					"jsonFile" : "target-my_reduce_v1_shared_memory-Debug-8009eda7294f4f49bf8e.json",
+					"name" : "my_reduce_v1_shared_memory",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "my_reduce_v2_no_divergence_brance::@214aa2a4a787257b8b5d",
+					"jsonFile" : "target-my_reduce_v2_no_divergence_brance-Debug-a318e7896ca5848308af.json",
+					"name" : "my_reduce_v2_no_divergence_brance",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "my_reduce_v3_no_bank_conflict::@214aa2a4a787257b8b5d",
+					"jsonFile" : "target-my_reduce_v3_no_bank_conflict-Debug-b38528b441ff5f617554.json",
+					"name" : "my_reduce_v3_no_bank_conflict",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "my_reduce_v4_add_during_load_planA::@214aa2a4a787257b8b5d",
+					"jsonFile" : "target-my_reduce_v4_add_during_load_planA-Debug-8ae6e41528989cc952af.json",
+					"name" : "my_reduce_v4_add_during_load_planA",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "my_reduce_v4_add_during_load_planB::@214aa2a4a787257b8b5d",
+					"jsonFile" : "target-my_reduce_v4_add_during_load_planB-Debug-2d0e435e874ee5deb264.json",
+					"name" : "my_reduce_v4_add_during_load_planB",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "my_reduce_v5_unroll_last_warp::@214aa2a4a787257b8b5d",
+					"jsonFile" : "target-my_reduce_v5_unroll_last_warp-Debug-f18ee8f790d7dfb3a44d.json",
+					"name" : "my_reduce_v5_unroll_last_warp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "my_reduce_v6_completely_unroll::@214aa2a4a787257b8b5d",
+					"jsonFile" : "target-my_reduce_v6_completely_unroll-Debug-823e5333aa6b5a576b2f.json",
+					"name" : "my_reduce_v6_completely_unroll",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "my_reduce_v7_multi_add::@214aa2a4a787257b8b5d",
+					"jsonFile" : "target-my_reduce_v7_multi_add-Debug-842cd4bf109b10164b38.json",
+					"name" : "my_reduce_v7_multi_add",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "my_reduce_v8_shuffle::@214aa2a4a787257b8b5d",
+					"jsonFile" : "target-my_reduce_v8_shuffle-Debug-54f2abb07c3308dffed4.json",
+					"name" : "my_reduce_v8_shuffle",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/wsh/cuda-practice/build",
+		"source" : "/home/wsh/cuda-practice"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

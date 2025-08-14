@@ -1,0 +1,1 @@
+/usr/bin/g++ @CMakeFiles/my_reduce_v8_shuffle.dir/objects1.rsp -o my_reduce_v8_shuffle @CMakeFiles/my_reduce_v8_shuffle.dir/linkLibs.rsp -L"/usr/local/cuda-12.2/targets/x86_64-linux/lib/stubs" -L"/usr/local/cuda-12.2/targets/x86_64-linux/lib"
