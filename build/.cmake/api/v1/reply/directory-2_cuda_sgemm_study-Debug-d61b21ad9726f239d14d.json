@@ -8,7 +8,7 @@
 	"installers" : [],
 	"paths" : 
 	{
-		"build" : "1_cuda_reduce_study",
-		"source" : "1_cuda_reduce_study"
+		"build" : "2_cuda_sgemm_study",
+		"source" : "2_cuda_sgemm_study"
 	}
 }

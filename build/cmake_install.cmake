@@ -44,7 +44,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/wsh/cuda-practice/build/1_cuda_reduce_study/cmake_install.cmake")
+  include("/home/wsh/cuda-practice/build/2_cuda_sgemm_study/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)

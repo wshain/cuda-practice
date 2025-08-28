@@ -138,14 +138,12 @@
 				"cc",
 				"cpp",
 				"cxx",
+				"m",
 				"mm",
 				"mpp",
 				"CPP",
 				"ixx",
-				"cppm",
-				"ccm",
-				"cxxm",
-				"c++m"
+				"cppm"
 			]
 		}
 	],

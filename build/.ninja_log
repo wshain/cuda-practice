@@ -1,0 +1,7 @@
+# ninja log v5
+1	718	1756279790227745623	2_cuda_sgemm_study/CMakeFiles/my_sgemm_v0_global_memory.dir/my_sgemm_v0_global_memory.cu.o	7ea1f69819dced2e
+719	853	1756279790362762432	2_cuda_sgemm_study/my_sgemm_v0_global_memory	219dc100e016f0bf
+1	779	1756386896625111912	2_cuda_sgemm_study/CMakeFiles/my_sgemm_v0_global_memory.dir/my_sgemm_v0_global_memory.cu.o	7ea1f69819dced2e
+779	922	1756386896772789605	2_cuda_sgemm_study/my_sgemm_v0_global_memory	219dc100e016f0bf
+1	639	1756386924415558517	2_cuda_sgemm_study/CMakeFiles/my_sgemm_v0_global_memory.dir/my_sgemm_v0_global_memory.cu.o	7ea1f69819dced2e
+639	755	1756386924530408460	2_cuda_sgemm_study/my_sgemm_v0_global_memory	219dc100e016f0bf
