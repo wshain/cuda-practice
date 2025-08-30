@@ -3,5 +3,20 @@
   "directory": "/home/wsh/cuda-practice/build",
   "command": "/usr/local/cuda-12.2/bin/nvcc -forward-unknown-to-host-compiler -isystem=/usr/local/cuda-12.2/include -g --generate-code=arch=compute_52,code=[compute_52,sm_52] -G -x cu -c /home/wsh/cuda-practice/2_cuda_sgemm_study/my_sgemm_v0_global_memory.cu -o 2_cuda_sgemm_study/CMakeFiles/my_sgemm_v0_global_memory.dir/my_sgemm_v0_global_memory.cu.o",
   "file": "/home/wsh/cuda-practice/2_cuda_sgemm_study/my_sgemm_v0_global_memory.cu"
+},
+{
+  "directory": "/home/wsh/cuda-practice/build",
+  "command": "/usr/local/cuda-12.2/bin/nvcc -forward-unknown-to-host-compiler -isystem=/usr/local/cuda-12.2/include -g --generate-code=arch=compute_52,code=[compute_52,sm_52] -G -x cu -c /home/wsh/cuda-practice/2_cuda_sgemm_study/my_sgemm_v1_shared_memory.cu -o 2_cuda_sgemm_study/CMakeFiles/my_sgemm_v1_shared_memory.dir/my_sgemm_v1_shared_memory.cu.o",
+  "file": "/home/wsh/cuda-practice/2_cuda_sgemm_study/my_sgemm_v1_shared_memory.cu"
+},
+{
+  "directory": "/home/wsh/cuda-practice/build",
+  "command": "/usr/local/cuda-12.2/bin/nvcc -forward-unknown-to-host-compiler -isystem=/usr/local/cuda-12.2/include -g --generate-code=arch=compute_52,code=[compute_52,sm_52] -G -x cu -c /home/wsh/cuda-practice/2_cuda_sgemm_study/my_sgemm_v2_shared_memory_sliding_window.cu -o 2_cuda_sgemm_study/CMakeFiles/my_sgemm_v2_shared_memory_sliding_window.dir/my_sgemm_v2_shared_memory_sliding_window.cu.o",
+  "file": "/home/wsh/cuda-practice/2_cuda_sgemm_study/my_sgemm_v2_shared_memory_sliding_window.cu"
+},
+{
+  "directory": "/home/wsh/cuda-practice/build",
+  "command": "/usr/local/cuda-12.2/bin/nvcc -forward-unknown-to-host-compiler -isystem=/usr/local/cuda-12.2/include -g --generate-code=arch=compute_52,code=[compute_52,sm_52] -G -x cu -c /home/wsh/cuda-practice/2_cuda_sgemm_study/my_sgemm_v3_increase_work_of_per_thread.cu -o 2_cuda_sgemm_study/CMakeFiles/my_sgemm_v3_increase_work_of_per_thread.dir/my_sgemm_v3_increase_work_of_per_thread.cu.o",
+  "file": "/home/wsh/cuda-practice/2_cuda_sgemm_study/my_sgemm_v3_increase_work_of_per_thread.cu"
 }
 ]
