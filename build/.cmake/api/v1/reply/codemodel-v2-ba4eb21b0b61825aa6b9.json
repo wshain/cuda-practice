@@ -34,7 +34,8 @@
 						1,
 						2,
 						3,
-						4
+						4,
+						5
 					]
 				}
 			],
@@ -54,7 +55,8 @@
 						1,
 						2,
 						3,
-						4
+						4,
+						5
 					]
 				}
 			],
@@ -93,6 +95,13 @@
 					"id" : "my_sgemm_v4_using_float4::@9e0cf25e0570dd23d605",
 					"jsonFile" : "target-my_sgemm_v4_using_float4-Debug-d3f223a6f83955d96f98.json",
 					"name" : "my_sgemm_v4_using_float4",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "my_sgemm_v5_register_outer_product::@9e0cf25e0570dd23d605",
+					"jsonFile" : "target-my_sgemm_v5_register_outer_product-Debug-16ba99ac247b9bec403d.json",
+					"name" : "my_sgemm_v5_register_outer_product",
 					"projectIndex" : 0
 				}
 			]

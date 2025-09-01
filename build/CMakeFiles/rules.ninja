@@ -115,6 +115,25 @@ rule CUDA_EXECUTABLE_LINKER__my_sgemm_v4_using_float4_Debug
 
 
 #############################################
+# Rule for compiling CUDA files.
+
+rule CUDA_COMPILER__my_sgemm_v5_register_outer_product_Debug
+  depfile = $DEP_FILE
+  deps = gcc
+  command = /usr/local/cuda-12.2/bin/nvcc -forward-unknown-to-host-compiler $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -x cu -c $in -o $out
+  description = Building CUDA object $out
+
+
+#############################################
+# Rule for linking CUDA executable.
+
+rule CUDA_EXECUTABLE_LINKER__my_sgemm_v5_register_outer_product_Debug
+  command = $PRE_LINK && /usr/bin/g++ $LINK_FLAGS $in -o $TARGET_FILE $LINK_PATH $LINK_LIBRARIES -L"/usr/local/cuda-12.2/targets/x86_64-linux/lib/stubs" -L"/usr/local/cuda-12.2/targets/x86_64-linux/lib" && $POST_BUILD
+  description = Linking CUDA executable $TARGET_FILE
+  restat = $RESTAT
+
+
+#############################################
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
