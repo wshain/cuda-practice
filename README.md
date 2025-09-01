@@ -36,5 +36,13 @@ v8.shuffle寄存器优化，放在寄存器中实现，快
 
 ------------------------------------
 
-<font color = "red">v3</font>:my_sgemm_v3_increase_work_of_per_thread， 计算量太少，无法掩盖访存带宽，增加计算访存比,一次访存多几次计算
+<font color = "red">v3</font>:my_sgemm_v3_increase_work_of_per_thread， 计算量太少，无法掩盖访存带宽，增加计算访存比,一次访存多几次计算,block大小不变，shared memory变为四个block，四个block变为一个整体，grid变为原来的1/4，每次计算四个block
 <img src= "/static/sgemm_v3_increase_work_of_per_thread.png">
+
+---------------------------------
+
+<font color = "red">v3</font>:using float4
+block<16,16>  => block<8,32>
+<img src = "/static/using_float4.png"></img>
+
+------------------------------

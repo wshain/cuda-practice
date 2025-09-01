@@ -47,54 +47,62 @@ void cpu_sgemm(float *A_ptr, float *B_ptr, float *C_ptr, const int M, const int 
             C_ptr[m * N + n] = temp;
         }
 }
-template <unsigned int BLOCK_SIZE, unsigned int STRIDE>
+#define FETCH_FLOAT4(pointer) (reinterpret_cast<float4 *>(&(pointer))[0]) // pointer其实是值，不是地址
+template <
+    unsigned int M_NUM_PER_BLOCK,
+    unsigned int N_NUM_PER_BLOCK,
+    unsigned int K_NUM_PER_BLOCK,
+    unsigned int NUM_PER_THREAD>
 __global__ void cuda_sgemm(float *A_ptr, float *B_ptr, float *C_ptr, const int M, const int N, const int K)
 {
-    constexpr int STEP = BLOCK_SIZE * STRIDE;
     int tx = threadIdx.x;
     int ty = threadIdx.y;
-    float *A_ptr_start = A_ptr + STEP * blockIdx.y * K;
-    float *B_ptr_start = B_ptr + blockIdx.x * STEP;
+    float *A_ptr_start = A_ptr + blockIdx.y * M_NUM_PER_BLOCK * K;
+    float *B_ptr_start = B_ptr + blockIdx.x * N_NUM_PER_BLOCK;
 
-    float temp[STRIDE][STRIDE] = {0.f};
+    __shared__ float a_shared[M_NUM_PER_BLOCK][K_NUM_PER_BLOCK];
+    __shared__ float b_shared[K_NUM_PER_BLOCK][N_NUM_PER_BLOCK];
 
-    __shared__ float a_shared[STEP][STEP];
-    __shared__ float b_shared[STEP][STEP];
+    float temp[NUM_PER_THREAD] = {0.f};
 
-    for (int s = 0; s < K; s += STEP)
+    for (int s = 0; s < K; s += K_NUM_PER_BLOCK)
     {
-        for (int i = 0; i < STRIDE; i++)
-            for (int j = 0; j < STRIDE; j++)
-            {
-                a_shared[ty + i * BLOCK_SIZE][tx + j * BLOCK_SIZE] = A_ptr_start[(ty + BLOCK_SIZE * i) * K + s + tx + j * BLOCK_SIZE];
-                b_shared[ty + i * BLOCK_SIZE][tx + j * BLOCK_SIZE] = B_ptr_start[(ty + BLOCK_SIZE * i + s) * N + tx + j * BLOCK_SIZE];
-            }
-        __syncthreads();
-        for (int i = 0; i < STRIDE; i++)
-            for (int j = 0; j < STRIDE; j++)
-            {
-                for (int k = 0; k < STEP; k++)
-                {
-                    temp[i][j] += a_shared[ty + i * BLOCK_SIZE][k] * b_shared[k][tx + j * BLOCK_SIZE];
-                }
-            }
+        FETCH_FLOAT4(a_shared[ty][tx * NUM_PER_THREAD]) = FETCH_FLOAT4(A_ptr_start[ty * K + s + tx * NUM_PER_THREAD]);
+        // a_shared[ty][tx * NUM_PER_THREAD] = A_ptr_start[ty * K + s + tx * NUM_PER_THREAD];
+        // a_shared[ty][tx * NUM_PER_THREAD + 1] = A_ptr_start[ty * K + s + tx * NUM_PER_THREAD + 1];
+        // a_shared[ty][tx * NUM_PER_THREAD + 2] = A_ptr_start[ty * K + s + tx * NUM_PER_THREAD + 2];
+        // a_shared[ty][tx * NUM_PER_THREAD + 3] = A_ptr_start[ty * K + s + tx * NUM_PER_THREAD + 3];
 
+        FETCH_FLOAT4(b_shared[ty][tx * NUM_PER_THREAD]) = FETCH_FLOAT4(B_ptr_start[(ty + s) * N + tx * NUM_PER_THREAD]);
+        // b_shared[ty][tx * NUM_PER_THREAD] = B_ptr_start[(ty + s) * N + tx * NUM_PER_THREAD];
+        // b_shared[ty][tx * NUM_PER_THREAD + 1] = B_ptr_start[(ty + s) * N + tx * NUM_PER_THREAD + 1];
+        // b_shared[ty][tx * NUM_PER_THREAD + 2] = B_ptr_start[(ty + s) * N + tx * NUM_PER_THREAD + 2];
+        // b_shared[ty][tx * NUM_PER_THREAD + 3] = B_ptr_start[(ty + s) * N + tx * NUM_PER_THREAD + 3];
+
+        __syncthreads();
+
+        for (int i = 0; i < NUM_PER_THREAD; i++)
+        {
+            for (int k = 0; k < K_NUM_PER_BLOCK; k++)
+            {
+                temp[i] += a_shared[ty][k] * b_shared[k][tx * NUM_PER_THREAD + i];
+            }
+        }
         __syncthreads();
     }
-    float *C_ptr_start = C_ptr + N * blockIdx.y * STEP + blockIdx.x * STEP;
 
-    for (int i = 0; i < STRIDE; i++)
-        for (int j = 0; j < STRIDE; j++)
-        {
-            C_ptr_start[N * (ty + i * BLOCK_SIZE) + tx + j * BLOCK_SIZE] = temp[i][j];
-        }
+    float *C_ptr_start = C_ptr + (blockIdx.y * M_NUM_PER_BLOCK) * N + blockIdx.x * N_NUM_PER_BLOCK;
+    for (int i = 0; i < NUM_PER_THREAD; i++)
+    {
+        C_ptr_start[ty * N + tx * NUM_PER_THREAD + i] = temp[i];
+    }
 }
 int main()
 {
     printf("sgemm \n");
     int m = 1024;
     int n = 1024;
-    constexpr int k = 1024;
+    int k = 1024;
 
     const size_t mem_size_A = m * k * sizeof(float);
     const size_t mem_size_B = n * k * sizeof(float);
@@ -121,11 +129,13 @@ int main()
 
     cpu_sgemm(matrix_A_host, matrix_B_host, matrix_C_host_cpu_calc, m, n, k);
 
-    constexpr int BLOCK = 16;
-    constexpr int STRIDE = 2;
-    dim3 block(BLOCK, BLOCK);
-    dim3 grid((m + BLOCK - 1) / BLOCK / STRIDE, (n + BLOCK - 1) / BLOCK / STRIDE);
-    cuda_sgemm<BLOCK, STRIDE><<<grid, block>>>(matrix_A_device, matrix_B_device, matrix_C_device, m, n, k);
+    constexpr int M_NUM_PER_BLOCK = 32;
+    constexpr int N_NUM_PER_BLOCK = 32;
+    constexpr int K_NUM_PER_BLOCK = 32;
+    constexpr int NUM_PER_THREAD = 4; // 每个thread处理的个数
+    dim3 block(8, 32);
+    dim3 grid(m / M_NUM_PER_BLOCK, n / N_NUM_PER_BLOCK);
+    cuda_sgemm<M_NUM_PER_BLOCK, N_NUM_PER_BLOCK, K_NUM_PER_BLOCK, NUM_PER_THREAD><<<grid, block>>>(matrix_A_device, matrix_B_device, matrix_C_device, m, n, k);
 
     cudaMemcpy(matrix_C_host_gpu_calc, matrix_C_device, mem_size_C, cudaMemcpyDeviceToHost);
 

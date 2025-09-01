@@ -4,5 +4,6 @@
 /home/wsh/cuda-practice/build/2_cuda_sgemm_study/CMakeFiles/my_sgemm_v1_shared_memory.dir
 /home/wsh/cuda-practice/build/2_cuda_sgemm_study/CMakeFiles/my_sgemm_v2_shared_memory_sliding_window.dir
 /home/wsh/cuda-practice/build/2_cuda_sgemm_study/CMakeFiles/my_sgemm_v3_increase_work_of_per_thread.dir
+/home/wsh/cuda-practice/build/2_cuda_sgemm_study/CMakeFiles/my_sgemm_v4_using_float4.dir
 /home/wsh/cuda-practice/build/2_cuda_sgemm_study/CMakeFiles/edit_cache.dir
 /home/wsh/cuda-practice/build/2_cuda_sgemm_study/CMakeFiles/rebuild_cache.dir
