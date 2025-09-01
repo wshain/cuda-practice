@@ -73,8 +73,14 @@ block<16,16>  => block<8,32>
 
 ------------------------------
 
-<font color = "red">v4</font>:使用寄存器模拟二级缓存，内积变外积：寄存器对shared memory进行加速， 内积变外积,寄存器进行的计算就与shared memory 的计算形式相同了（先对M * K取一横条， 再对K * N取一竖条，放进shared memory, 之前的计算是，后续进行正常的内积计算，现在的做法是继续取一横条，一竖条，再分竖条，横条，放进寄存器中，进行外积运算）
+<font color = "red">v5</font>:使用寄存器模拟二级缓存，内积变外积：寄存器对shared memory进行加速， 内积变外积,寄存器进行的计算就与shared memory 的计算形式相同了（先对M * K取一横条， 再对K * N取一竖条，放进shared memory, 之前的计算是，后续进行正常的内积计算，现在的做法是继续取一横条，一竖条，再分竖条，横条，放进寄存器中，进行外积运算）
 
 <img src = "/static/register_outer_product.png"></img>
 
 --------------------------------
+
+<font color = "red">v6</font>:在v5的基础上使用float4加速取存
+
+<img src = "/static/register_outer_product_float4.png"></img>
+
+-------------------

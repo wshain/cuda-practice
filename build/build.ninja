@@ -267,6 +267,39 @@ build 2_cuda_sgemm_study/my_sgemm_v5_register_outer_product: CUDA_EXECUTABLE_LIN
   TARGET_FILE = 2_cuda_sgemm_study/my_sgemm_v5_register_outer_product
   TARGET_PDB = my_sgemm_v5_register_outer_product.dbg
 
+# =============================================================================
+# Object build statements for EXECUTABLE target my_sgemm_v6_register_outer_product_float4
+
+
+#############################################
+# Order-only phony target for my_sgemm_v6_register_outer_product_float4
+
+build cmake_object_order_depends_target_my_sgemm_v6_register_outer_product_float4: phony || 2_cuda_sgemm_study/CMakeFiles/my_sgemm_v6_register_outer_product_float4.dir
+
+build 2_cuda_sgemm_study/CMakeFiles/my_sgemm_v6_register_outer_product_float4.dir/my_sgemm_v6_register_outer_product_float4.cu.o: CUDA_COMPILER__my_sgemm_v6_register_outer_product_float4_Debug /home/wsh/cuda-practice/2_cuda_sgemm_study/my_sgemm_v6_register_outer_product_float4.cu || cmake_object_order_depends_target_my_sgemm_v6_register_outer_product_float4
+  DEP_FILE = 2_cuda_sgemm_study/CMakeFiles/my_sgemm_v6_register_outer_product_float4.dir/my_sgemm_v6_register_outer_product_float4.cu.o.d
+  FLAGS = -g --generate-code=arch=compute_52,code=[compute_52,sm_52] -G
+  INCLUDES = -isystem=/usr/local/cuda-12.2/include
+  OBJECT_DIR = 2_cuda_sgemm_study/CMakeFiles/my_sgemm_v6_register_outer_product_float4.dir
+  OBJECT_FILE_DIR = 2_cuda_sgemm_study/CMakeFiles/my_sgemm_v6_register_outer_product_float4.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target my_sgemm_v6_register_outer_product_float4
+
+
+#############################################
+# Link the executable 2_cuda_sgemm_study/my_sgemm_v6_register_outer_product_float4
+
+build 2_cuda_sgemm_study/my_sgemm_v6_register_outer_product_float4: CUDA_EXECUTABLE_LINKER__my_sgemm_v6_register_outer_product_float4_Debug 2_cuda_sgemm_study/CMakeFiles/my_sgemm_v6_register_outer_product_float4.dir/my_sgemm_v6_register_outer_product_float4.cu.o | /usr/local/cuda-12.2/lib64/libcudart.so /usr/local/cuda-12.2/lib64/libcublas.so
+  FLAGS = -g --generate-code=arch=compute_52,code=[compute_52,sm_52]
+  LINK_LIBRARIES = /usr/local/cuda-12.2/lib64/libcudart.so  /usr/local/cuda-12.2/lib64/libcublas.so  -lcudadevrt  -lcudart_static  -lrt  -lpthread  -ldl
+  OBJECT_DIR = 2_cuda_sgemm_study/CMakeFiles/my_sgemm_v6_register_outer_product_float4.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = 2_cuda_sgemm_study/my_sgemm_v6_register_outer_product_float4
+  TARGET_PDB = my_sgemm_v6_register_outer_product_float4.dbg
+
 
 #############################################
 # Utility command for edit_cache
@@ -306,6 +339,8 @@ build my_sgemm_v4_using_float4: phony 2_cuda_sgemm_study/my_sgemm_v4_using_float
 
 build my_sgemm_v5_register_outer_product: phony 2_cuda_sgemm_study/my_sgemm_v5_register_outer_product
 
+build my_sgemm_v6_register_outer_product_float4: phony 2_cuda_sgemm_study/my_sgemm_v6_register_outer_product_float4
+
 # =============================================================================
 # Folder targets.
 
@@ -321,7 +356,7 @@ build all: phony 2_cuda_sgemm_study/all
 #############################################
 # Folder: /home/wsh/cuda-practice/build/2_cuda_sgemm_study
 
-build 2_cuda_sgemm_study/all: phony 2_cuda_sgemm_study/my_sgemm_v0_global_memory 2_cuda_sgemm_study/my_sgemm_v1_shared_memory 2_cuda_sgemm_study/my_sgemm_v2_shared_memory_sliding_window 2_cuda_sgemm_study/my_sgemm_v3_increase_work_of_per_thread 2_cuda_sgemm_study/my_sgemm_v4_using_float4 2_cuda_sgemm_study/my_sgemm_v5_register_outer_product
+build 2_cuda_sgemm_study/all: phony 2_cuda_sgemm_study/my_sgemm_v0_global_memory 2_cuda_sgemm_study/my_sgemm_v1_shared_memory 2_cuda_sgemm_study/my_sgemm_v2_shared_memory_sliding_window 2_cuda_sgemm_study/my_sgemm_v3_increase_work_of_per_thread 2_cuda_sgemm_study/my_sgemm_v4_using_float4 2_cuda_sgemm_study/my_sgemm_v5_register_outer_product 2_cuda_sgemm_study/my_sgemm_v6_register_outer_product_float4
 
 # =============================================================================
 # Built-in targets
