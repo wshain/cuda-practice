@@ -84,3 +84,9 @@ block<16,16>  => block<8,32>
 <img src = "/static/register_outer_product_float4.png"></img>
 
 -------------------
+
+<font color = "red">v7</font>:先转置再存放到shared memory 内，a_shared memory 也可以用float4进行加速，考虑细节
+<img src = "/static/A_smem_transpose.png"></img>
+<img src = "/static/A_smem_transpose_2.png"></img>
+
+-------------------
