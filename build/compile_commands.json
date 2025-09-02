@@ -38,5 +38,10 @@
   "directory": "/home/wsh/cuda-practice/build",
   "command": "/usr/local/cuda-12.2/bin/nvcc -forward-unknown-to-host-compiler -isystem=/usr/local/cuda-12.2/include -g --generate-code=arch=compute_52,code=[compute_52,sm_52] -G -x cu -c /home/wsh/cuda-practice/2_cuda_sgemm_study/my_sgemm_v7_A_smem_transpose.cu -o 2_cuda_sgemm_study/CMakeFiles/my_sgemm_v7_A_smem_transpose.dir/my_sgemm_v7_A_smem_transpose.cu.o",
   "file": "/home/wsh/cuda-practice/2_cuda_sgemm_study/my_sgemm_v7_A_smem_transpose.cu"
+},
+{
+  "directory": "/home/wsh/cuda-practice/build",
+  "command": "/usr/local/cuda-12.2/bin/nvcc -forward-unknown-to-host-compiler -isystem=/usr/local/cuda-12.2/include -g --generate-code=arch=compute_52,code=[compute_52,sm_52] -G -x cu -c /home/wsh/cuda-practice/2_cuda_sgemm_study/my_sgemm_v8_double_buffer.cu -o 2_cuda_sgemm_study/CMakeFiles/my_sgemm_v8_double_buffer.dir/my_sgemm_v8_double_buffer.cu.o",
+  "file": "/home/wsh/cuda-practice/2_cuda_sgemm_study/my_sgemm_v8_double_buffer.cu"
 }
 ]

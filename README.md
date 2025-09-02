@@ -90,3 +90,10 @@ block<16,16>  => block<8,32>
 <img src = "/static/A_smem_transpose_2.png"></img>
 
 -------------------
+
+<font color = "red">v8</font>:double buffer 二级计算缓冲 + 双shared memory 隐藏同步时间
+<img src = "/static/double_buffer1.png"></img>
+
+<img src = "/static/double_buffer2.png"></img>
+
+-------------------

@@ -333,6 +333,39 @@ build 2_cuda_sgemm_study/my_sgemm_v7_A_smem_transpose: CUDA_EXECUTABLE_LINKER__m
   TARGET_FILE = 2_cuda_sgemm_study/my_sgemm_v7_A_smem_transpose
   TARGET_PDB = my_sgemm_v7_A_smem_transpose.dbg
 
+# =============================================================================
+# Object build statements for EXECUTABLE target my_sgemm_v8_double_buffer
+
+
+#############################################
+# Order-only phony target for my_sgemm_v8_double_buffer
+
+build cmake_object_order_depends_target_my_sgemm_v8_double_buffer: phony || 2_cuda_sgemm_study/CMakeFiles/my_sgemm_v8_double_buffer.dir
+
+build 2_cuda_sgemm_study/CMakeFiles/my_sgemm_v8_double_buffer.dir/my_sgemm_v8_double_buffer.cu.o: CUDA_COMPILER__my_sgemm_v8_double_buffer_Debug /home/wsh/cuda-practice/2_cuda_sgemm_study/my_sgemm_v8_double_buffer.cu || cmake_object_order_depends_target_my_sgemm_v8_double_buffer
+  DEP_FILE = 2_cuda_sgemm_study/CMakeFiles/my_sgemm_v8_double_buffer.dir/my_sgemm_v8_double_buffer.cu.o.d
+  FLAGS = -g --generate-code=arch=compute_52,code=[compute_52,sm_52] -G
+  INCLUDES = -isystem=/usr/local/cuda-12.2/include
+  OBJECT_DIR = 2_cuda_sgemm_study/CMakeFiles/my_sgemm_v8_double_buffer.dir
+  OBJECT_FILE_DIR = 2_cuda_sgemm_study/CMakeFiles/my_sgemm_v8_double_buffer.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target my_sgemm_v8_double_buffer
+
+
+#############################################
+# Link the executable 2_cuda_sgemm_study/my_sgemm_v8_double_buffer
+
+build 2_cuda_sgemm_study/my_sgemm_v8_double_buffer: CUDA_EXECUTABLE_LINKER__my_sgemm_v8_double_buffer_Debug 2_cuda_sgemm_study/CMakeFiles/my_sgemm_v8_double_buffer.dir/my_sgemm_v8_double_buffer.cu.o | /usr/local/cuda-12.2/lib64/libcudart.so /usr/local/cuda-12.2/lib64/libcublas.so
+  FLAGS = -g --generate-code=arch=compute_52,code=[compute_52,sm_52]
+  LINK_LIBRARIES = /usr/local/cuda-12.2/lib64/libcudart.so  /usr/local/cuda-12.2/lib64/libcublas.so  -lcudadevrt  -lcudart_static  -lrt  -lpthread  -ldl
+  OBJECT_DIR = 2_cuda_sgemm_study/CMakeFiles/my_sgemm_v8_double_buffer.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = 2_cuda_sgemm_study/my_sgemm_v8_double_buffer
+  TARGET_PDB = my_sgemm_v8_double_buffer.dbg
+
 
 #############################################
 # Utility command for edit_cache
@@ -376,6 +409,8 @@ build my_sgemm_v6_register_outer_product_float4: phony 2_cuda_sgemm_study/my_sge
 
 build my_sgemm_v7_A_smem_transpose: phony 2_cuda_sgemm_study/my_sgemm_v7_A_smem_transpose
 
+build my_sgemm_v8_double_buffer: phony 2_cuda_sgemm_study/my_sgemm_v8_double_buffer
+
 # =============================================================================
 # Folder targets.
 
@@ -391,7 +426,7 @@ build all: phony 2_cuda_sgemm_study/all
 #############################################
 # Folder: /home/wsh/cuda-practice/build/2_cuda_sgemm_study
 
-build 2_cuda_sgemm_study/all: phony 2_cuda_sgemm_study/my_sgemm_v0_global_memory 2_cuda_sgemm_study/my_sgemm_v1_shared_memory 2_cuda_sgemm_study/my_sgemm_v2_shared_memory_sliding_window 2_cuda_sgemm_study/my_sgemm_v3_increase_work_of_per_thread 2_cuda_sgemm_study/my_sgemm_v4_using_float4 2_cuda_sgemm_study/my_sgemm_v5_register_outer_product 2_cuda_sgemm_study/my_sgemm_v6_register_outer_product_float4 2_cuda_sgemm_study/my_sgemm_v7_A_smem_transpose
+build 2_cuda_sgemm_study/all: phony 2_cuda_sgemm_study/my_sgemm_v0_global_memory 2_cuda_sgemm_study/my_sgemm_v1_shared_memory 2_cuda_sgemm_study/my_sgemm_v2_shared_memory_sliding_window 2_cuda_sgemm_study/my_sgemm_v3_increase_work_of_per_thread 2_cuda_sgemm_study/my_sgemm_v4_using_float4 2_cuda_sgemm_study/my_sgemm_v5_register_outer_product 2_cuda_sgemm_study/my_sgemm_v6_register_outer_product_float4 2_cuda_sgemm_study/my_sgemm_v7_A_smem_transpose 2_cuda_sgemm_study/my_sgemm_v8_double_buffer
 
 # =============================================================================
 # Built-in targets

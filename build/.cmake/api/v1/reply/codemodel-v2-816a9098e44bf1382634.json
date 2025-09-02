@@ -37,7 +37,8 @@
 						4,
 						5,
 						6,
-						7
+						7,
+						8
 					]
 				}
 			],
@@ -60,7 +61,8 @@
 						4,
 						5,
 						6,
-						7
+						7,
+						8
 					]
 				}
 			],
@@ -120,6 +122,13 @@
 					"id" : "my_sgemm_v7_A_smem_transpose::@9e0cf25e0570dd23d605",
 					"jsonFile" : "target-my_sgemm_v7_A_smem_transpose-Debug-3d356cb25e1578b7803e.json",
 					"name" : "my_sgemm_v7_A_smem_transpose",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "my_sgemm_v8_double_buffer::@9e0cf25e0570dd23d605",
+					"jsonFile" : "target-my_sgemm_v8_double_buffer-Debug-6f69d0d4fc15be99193e.json",
+					"name" : "my_sgemm_v8_double_buffer",
 					"projectIndex" : 0
 				}
 			]
